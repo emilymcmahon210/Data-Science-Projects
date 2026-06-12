@@ -55,9 +55,13 @@ The Logistic Regression model achieved the strongest overall performance:
 * Recall: 33.3%
 * AUC-ROC: 0.47
 
-Compared to SVM, Logistic Regression identified a larger proportion of fraudulent transactions and demonstrated superior fraud detection capability within the dataset.
+Compared to SVM, Logistic Regression identified a larger proportion of fraudulent transactions and demonstrated superior fraud detection capability within the dataset. The results also highlighted the challenges associated with highly imbalanced datasets, where accurately detecting rare fraud events remains difficult even when using advanced machine learning techniques.
 
-The results also highlighted the challenges associated with highly imbalanced datasets, where accurately detecting rare fraud events remains difficult even when using advanced machine learning techniques.
+Model Performance Interpretation: The confusion matrices reveal the challenges of detecting fraudulent transactions in a highly imbalanced dataset. While Logistic Regression identified the greatest number of fraudulent transactions (10 true positives), all models struggled to detect the minority class. The Random Forest model failed to identify any fraudulent transactions, while SVM detected only 4 fraud cases. These results demonstrate that high overall accuracy can be misleading in fraud detection problems and highlight the importance of evaluating models using recall and false negative rates.
+
+<img width="1299" height="406" alt="image" src="https://github.com/user-attachments/assets/4f6086b5-e5f3-48b5-8811-07f1d8ea8ad7" />
+
+
 
 ## Key Findings
 
