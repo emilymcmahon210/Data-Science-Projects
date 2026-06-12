@@ -4,6 +4,12 @@
 
 Customer retention is a critical challenge for subscription-based businesses, as acquiring new customers is often more expensive than retaining existing ones. This project focuses on predicting customer churn and identifying the customer characteristics most strongly associated with attrition. By understanding which customers are most likely to leave, organizations can implement targeted retention strategies and reduce revenue loss.
 
+## Key Results
+
+- Decision Tree achieved the highest performance with 73.5% accuracy and an AUC-ROC score of 0.782.
+- Contract type, monthly charges, and tenure were the strongest predictors of customer churn.
+- Customers with Contract Type 0 exhibited nearly three times the churn rate of customers with longer-term contracts.
+
 ## Dataset Information
 
 The dataset contains customer demographic information, account details, service subscriptions, and contract information. Features include customer tenure, age, contract type, internet service, monthly charges, payment methods, and additional service options.
@@ -20,9 +26,21 @@ The project followed a structured machine learning workflow:
 
 ### Data Exploration
 
-* Performed exploratory data analysis to understand customer demographics and service usage patterns.
-* Calculated churn rates by contract type and internet service type.
-* Created visualizations to identify customer segments with higher churn risk.
+To better understand customer behavior, churn rates were analyzed across key service categories.
+
+#### Churn Rate by Contract Type
+
+<img width="619" height="383" alt="image" src="https://github.com/user-attachments/assets/4a688fe2-2f28-408e-931c-727754477517" />
+
+
+Customers with Contract Type 0 exhibited the highest churn rate at approximately 45%, while customers with Contract Types 1 and 2 experienced substantially lower churn rates of approximately 16%. This suggests that contract structure is strongly associated with customer retention and may be an important predictor of churn.
+
+#### Churn by Internet Service
+
+<img width="566" height="386" alt="image" src="https://github.com/user-attachments/assets/e26ff1f8-477b-471a-8464-250a9d25fdee" />
+
+Customers in Internet Service Category 2 exhibited substantially higher churn rates than customers in Categories 0 and 1, suggesting that service type may be an important predictor of customer attrition.
+
 
 ### Data Preparation
 
@@ -40,10 +58,6 @@ Several machine learning classification models were developed and compared:
 * Support Vector Machine (SVM)
 * Decision Tree Classification
 
-### Feature Importance Analysis
-
-Feature importance was evaluated using Logistic Regression coefficients and Decision Tree importance scores to identify the strongest predictors of churn.
-
 ### Model Evaluation
 
 Models were evaluated using:
@@ -58,21 +72,24 @@ Performance metrics were compared to determine the most effective model for chur
 
 ## Results
 
-The Decision Tree model achieved the strongest overall performance with:
+### Model Performance Comparison
 
-* Accuracy: 73.5%
-* AUC-ROC: 0.78
+<img width="1260" height="445" alt="image" src="https://github.com/user-attachments/assets/c7eee56e-9e42-4abb-978e-51964d5a36d4" />
 
-Model comparison demonstrated that Decision Trees provided the best balance between predictive performance and interpretability.
+The ROC and Precision-Recall curves demonstrate the performance of each classification model across multiple decision thresholds. The Decision Tree achieved the highest overall discrimination ability with an AUC-ROC score of 0.782, followed closely by Logistic Regression (0.771). KNN produced the weakest performance across both evaluation curves.
 
-Feature importance analysis identified several key drivers of churn, including:
+### Model Comparison Metrics
 
-* Customer tenure
-* Contract type
-* Internet service
-* Online security services
+<img width="523" height="93" alt="image" src="https://github.com/user-attachments/assets/e1cf895c-36a1-4351-8975-ca3eb1feac5b" />
 
-These findings suggest that contract structure and service utilization play a significant role in customer retention.
+The Decision Tree model achieved the strongest overall performance, with the highest accuracy (73.5%), recall (48.9%), F1-score (0.543), and AUC-ROC score (0.782). While Logistic Regression performed similarly, the Decision Tree provided the best balance between identifying churned customers and minimizing classification errors.
+
+
+### Feature Importance
+
+<img width="869" height="473" alt="image" src="https://github.com/user-attachments/assets/71b31faa-024f-4878-839d-d9b67be2c9b0" />
+
+Contract type, monthly charges, tenure, and total charges were identified as the most influential predictors of customer churn. These findings suggest that customer commitment level and service costs play a major role in retention outcomes.
 
 ## Business Impact
 
