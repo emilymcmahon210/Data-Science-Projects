@@ -30,21 +30,21 @@ Unnecessary variables were removed to reduce noise in the clustering process. Ag
 
 The selected features were standardized using StandardScaler so that age and income contributed equally to the clustering process.
 
-### Hierarchical Clustering
+### Linkage Method Comparision
 
-Agglomerative hierarchical clustering was performed using multiple linkage methods:
+<img width="1321" height="365" alt="image" src="https://github.com/user-attachments/assets/5b78c72f-370b-457a-842b-c8c2b8ef5b39" />
 
-* Ward linkage
-* Complete linkage
-* Average linkage
-
-These methods were compared to observe how different distance-based approaches affected customer grouping.
+Agglomerative hierarchical clustering was performed using Ward, Complete, and Average linkage methods to evaluate how different distance calculations influenced cluster formation. While all three methods identified distinct customer groupings based on age and income, Complete linkage produced the clearest separation between clusters and was selected for further analysis. These methods were compared to observe how different distance-based approaches affected customer grouping.
 
 ### Dendrogram Analysis
 
-Dendrograms were created to visualize how customers were grouped at different distance levels. Based on the dendrogram results, four clusters were selected as the most appropriate number of customer segments.
+<img width="1034" height="329" alt="image" src="https://github.com/user-attachments/assets/4090d91d-21a5-4b97-a0e0-ea121f2ba240" />
+
+Dendrograms were generated using Ward, Complete, and Average linkage methods to visualize the hierarchical relationships between customers. The red dashed line represents the selected distance threshold used to determine the optimal number of clusters. Based on the separation observed across the dendrograms, four distinct customer segments were selected for further analysis.
 
 ### Cluster Visualization
+
+<img width="589" height="446" alt="image" src="https://github.com/user-attachments/assets/44248de0-dc7b-418d-82f8-b545f1fd02e2" />
 
 The final clustering model used complete linkage with four clusters. The results were visualized using a scatterplot of scaled age and income, with each point colored by its assigned cluster.
 
